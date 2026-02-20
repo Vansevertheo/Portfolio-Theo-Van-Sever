@@ -20,23 +20,25 @@
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://unpkg.com/i18next@23.7.6/dist/umd/i18next.min.js"></script>
 
 <body>
 
   <header>
     <nav id="nav">
+      <div id="lang-switch"><span id="lang-fr">FR</span> / <span id="lang-en">EN</span></div>
       <ul>
         <li>
-          <a href="#Projects">Projects</a>
+          <a data-i18n="projet" href="#Projects">Projects</a>
         </li>
         <li>
-          <a href="#About_me">About me</a>
+          <a data-i18n="about_me" href="#About_me">About me</a>
         </li>
         <li>
-          <a href="#Technologies">Skills</a>
+          <a data-i18n="technologies" href="#Technologies">Skills</a>
         </li>
         <li>
-          <a href="#Contact">Contact me</a>
+          <a data-i18n="contact" href="#Contact">Contact me</a>
         </li>
       </ul>
       <div id="icons"></div>
@@ -44,14 +46,14 @@
   </header>
 
   <section class="accueil" id="Accueil"> 
-    <h2><span class="wave">👋</span> Hey, I'm Theo Van Sever</h2>
-    <h3>I'm a junior developper looking for an apprenticeship in Data analysis.</h3>
+    <h2><span class="wave">👋</span> <span data-i18n="hey">Hey, I'm Theo Van Sever</span></h2>
+    <h3 data-i18n="self_description">I'm a junior developper looking for an apprenticeship in Data analysis.</h3>
     <div class="button_wrapper">
       <a href="#Contact">
-        <span class="button_top">Wanna get in touch ?</span>
+        <span data-i18n="contact2" class="button_top">Wanna get in touch ?</span>
       </a>
       <a href="Assets/CV-ThéoVanSever.pdf" download="CV Théo Van Sever">
-        <span class="button_top">Download my resume !</span>
+        <span data-i18n="cv" class="button_top">Download my resume !</span>
       </a>
     </div>
 
@@ -59,7 +61,7 @@
 
 
   <section class="projects" id="Projects">
-    <h2 class="title_project">Projects</h2>
+    <h2 data-i18n="projects" class="title_project">Projects</h2>
     <div class ="card-container">
       <div class="card">
         <a href="https://github.com/Vansevertheo?tab=repositories" target="_blank" style="text-decoration: none; color: inherit;">
@@ -69,9 +71,9 @@
             </div>
           </div>
           <div class="info">
-            <h2 class="title">Hangman game</h2>
-            <div class="cat">Duration : 2 days</div>
-            <p class="desc">Interactive hangman game with visual interface using Pygame for graphics and animations</p>
+            <h2 data-i18n="hangman" class="title">Hangman game</h2>
+            <div data-i18n="duree1" class="cat">Duration : 2 days</div>
+            <p data-i18n="description1" class="desc">Interactive hangman game with visual interface using Pygame for graphics and animations</p>
             <div class="feats">
               <span class="feat">PYTHON</span>
               <span class="feat">PYGAME</span>
@@ -87,9 +89,9 @@
             </div>
           </div>
           <div class="info">
-            <h2 class="title">My Digital Resume</h2>
-            <div class="cat">Duration : 4 days</div>
-            <p class="desc">My first web project - A digital transformation of my paper resume into an interactive HTML/CSS website with responsive design and modern styling.</p>
+            <h2 data-i18n="digital_resume" class="title">My Digital Resume</h2>
+            <div  data-i18n="duree2" class="cat">Duration : 4 days</div>
+            <p data-i18n="description2" class="desc">My first web project - A digital transformation of my paper resume into an interactive HTML/CSS website with responsive design and modern styling.</p>
             <div class="feats">
               <span class="feat">HTML</span>
               <span class="feat">CSS</span>
@@ -106,8 +108,8 @@
           </div>
           <div class="info">
             <h2 class="title">JobBoard</h2>
-            <div class="cat">Duration : 2 weeks</div>
-            <p class="desc">Complete recruitment platform with React frontend and Django REST API. Enables recruiters to post jobs and candidates to apply with JWT authentication.</p>
+            <div data-i18n="duree3" class="cat">Duration : 2 weeks</div>
+            <p data-i18n="description3" class="desc">Complete recruitment platform with React frontend and Django REST API. Enables recruiters to post jobs and candidates to apply with JWT authentication.</p>
             <div class="feats">
               <span class="feat">REACT</span>
               <span class="feat">DJANGO</span>
@@ -117,25 +119,72 @@
           </div>
         </a>
       </div>
+      <div class="card">
+        <a href="" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="tilt">
+            <div class="img">
+              <img src="Assets/Capture d'écran 2026-01-21 150254.png" alt="The Legend of Jean Guy Screenshot">
+            </div>
+          </div>
+          <div class="info">
+            <h2 class="title">The Legend of<br>Jean Guy</h2>
+            <div data-i18n="duree4" class="cat">Duration : 3 weeks</div>
+            <p data-i18n="description4" class="desc">Java development of a 2D action-adventure game in the style of The Legend of Zelda, with enemy management, combat system, collisions, tile maps, and user interface. Unit testing with JUnit.</p>
+            <div class="feats">
+              <span class="feat">JAVA</span>
+              <span class="feat">JUNIT</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <div class="tilt">
+          <div class="img">
+            <img src="Assets/generated-image.png" alt="Coming Soon">
+          </div>
+        </div>
+        <div class="info">
+          <h2 data-i18n="moreprojects" class="title">More project to come</h2>
+          <div data-i18n="comingsoon" class="cat">Coming Soon</div>
+          <p data-i18n="description5" class="desc">Exciting new projects are in development. Stay tuned for updates!</p>
+          <div class="feats">
+            <span data-i18n="" class="feat">TBD</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tilt">
+          <div class="img">
+            <img src="Assets/generated-image.png" alt="Coming Soon">
+          </div>
+        </div>
+        <div class="info">
+          <h2 data-i18n="moreprojects" class="title">More project to come</h2>
+          <div data-i18n="comingsoon" class="cat">Coming Soon</div>
+          <p data-i18n="description5" class="desc">Exciting new projects are in development. Stay tuned for updates!</p>
+          <div class="feats">
+            <span data-i18n="" class="feat">TBD</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3 class="more-projects">More projects to come</h3>
   </section>
 
   <section class="about_me" id="About_me">
-    <h2>About me</h2>
+    <h2 data-i18n="about_me_section">About me</h2>
     <div class="about_me_content_wrapper">
       <div class="about_me_texte">
         <div class="journey-section">
-          <h3>My Background :</h3>
-          <p>Currently pursuing a professional transition into web development, I hold a DUT in Business Techniques and a professional bachelor's in International Trade. My two years as a commercial assistant working with international brands refined my English proficiency, commercial acumen, and cross-cultural adaptability.</p><br>
+          <h3 data-i18n="background">My Background :</h3>
+          <p data-i18n="description_background" >Currently pursuing a professional transition into web development, I hold a DUT in Business Techniques and a professional bachelor's in International Trade. My two years as a commercial assistant working with international brands refined my English proficiency, commercial acumen, and cross-cultural adaptability.</p><br>
         </div>
         <div class="why-section">
-          <h3>Why tech ?</h3>
-          <p>I began this professional transition in September 2025 because commercial roles left me without the technical depth and continuous learning I value most; routine crept in, while my curiosity pushes me to keep expanding my skills and discover new things. However, in my previous roles, I worked with data every day to guide strategic, well-reasoned commercial decisions, which naturally led me toward more technical and analytical work such as data analyst.</p><br>
+          <h3 data-i18n="why_tech" >Why tech ?</h3>
+          <p data-i18n="description_why_tech">I began this professional transition in September 2025 because commercial roles left me without the technical depth and continuous learning I value most; routine crept in, while my curiosity pushes me to keep expanding my skills and discover new things. However, in my previous roles, I worked with data every day to guide strategic, well-reasoned commercial decisions, which naturally led me toward more technical and analytical work such as data analyst.</p><br>
         </div>
         <div class="today-section">
-          <h3>Today:</h3>
-          <p>I'm currently an Epitech student, learning something new every day through project-based pedagogy that encourages collaboration and self-directed learning. This approach suits me perfectly as I'm naturally a dynamic, open-minded person who actively seeks out others, driven by curiosity to learn more. I'm actively seeking a data analysis apprenticeship starting January 2026, a field where my commercial background would be valuable.</p><br>
+          <h3 data-i18n="today_section" >Today:</h3>
+          <p data-i18n="description_today_section" >I'm currently an Epitech student, learning something new every day through project-based pedagogy that encourages collaboration and self-directed learning. This approach suits me perfectly as I'm naturally a dynamic, open-minded person who actively seeks out others, driven by curiosity to learn more. I'm actively seeking a data analysis apprenticeship starting January 2026, a field where my commercial background would be valuable.</p><br>
         </div>
       </div>
       <div class="about_me_side_wrapper">
@@ -148,15 +197,15 @@
           <ul>
             <li><a href="https://www.linkedin.com/in/th%C3%A9o-van-sever-26b3731ba/">
               <i class="fab fa-linkedin icone"></i>
-              <span>Follow me on LinkedIn</span></a>
+              <span data-i18n="linkedin" >Follow me on LinkedIn</span></a>
             </li>
             <li><a href="https://github.com/Vansevertheo?tab=repositories">
               <i class="fab fa-github icone"></i>
-              <span>Follow me on GitHub</span></a>
+              <span data-i18n="github" >Follow me on GitHub</span></a>
             </li>
-            <li><a href="vansevert@gmail.com">
+            <li><a href="mailto:vansevert@gmail.com">
               <i class="fa-solid fa-envelope"></i>
-              <span>My mail</span></a></li>
+              <span data-i18n="mail" >My mail</span></a></li>
           </ul>
         </div>
       </div>
@@ -220,7 +269,7 @@
       </div>
       
       <div class="skill-category">
-        <h3>Other</h3>
+        <h3 data-i18n="other">Other</h3>
         <div class="skill-list">
           <div class="skill-item">
             <i class='bx bxl-git'></i>
@@ -240,35 +289,35 @@
   </section>
 
   <footer id="Contact">
-    <h2>Contact me</h2></footer>
+    <h2 data-i18n="contact_form" >Contact me</h2></footer>
     <form class="contact-form">
       <div class="form-row">
         <div class="form-group">
-          <label for="prenom">First name *</label>
+          <label data-i18n="first_name" for="prenom">First name *</label>
           <input type="text" id="prenom" name="prenom" placeholder="Jane" required>
         </div>
         <div class="form-group">
-          <label for="nom">Name *</label>
+          <label data-i18n="name" for="nom">Name *</label>
           <input type="text" id="nom" name="nom" placeholder="Doe" required>
         </div>
         <div class="form-group">
-          <label for="entreprise">Company</label>
+          <label data-i18n="company" for="entreprise">Company</label>
           <input type="text" id="entreprise" name="entreprise" placeholder="Jane Doe SARL">
         </div>
         <div class="form-group">
-          <label for="email">Mail *</label>
+          <label data-i18n="mail" for="email">Mail *</label>
           <input type="email" id="email" name="email" placeholder="jane.doe@gmail.com" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group full-width">
-          <label for="message">Your message</label>
+          <label data-i18n="message" for="message">Your message</label>
           <textarea id="message" name="message" rows="6" placeholder="I would like to meet you to know more about your background."></textarea>
         </div>
       </div>
 
       <div class="form-row">
-        <button type="submit">Submit</button>
+        <button data-i18n="submit" type="submit">Submit</button>
       </div>
     </form>
 
@@ -282,9 +331,9 @@
       <div class="modal-icon">
         <i class="fas fa-check-circle" id="modal-icon"></i>
       </div>
-      <h3 id="modal-title">Message envoyé !</h3>
-      <p id="modal-message">Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.</p>
-      <button id="modal-close" class="modal-btn">Fermer</button>
+      <h3 data-i18n="message_validation" id="modal-title">Message sent !</h3>
+      <p data-i18n="message_validation2" id="modal-message">Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.</p>
+      <button data-i18n="close_button" id="modal-close" class="modal-btn">Close</button>
     </div>
   </div>
 

@@ -1,3 +1,37 @@
+async function loadTranslations() {
+  const enResponse = await fetch('lang/en.json');
+  const enData = await enResponse.json();
+  const frResponse = await fetch('lang/fr.json');
+  const frData = await frResponse.json();
+
+  i18next.init({
+    lng: 'en',
+    resources: {
+      en: { translation: enData },
+      fr: { translation: frData }
+    }
+  });
+
+  // Now add event listeners
+  document.getElementById('lang-fr').addEventListener('click', () => {
+    i18next.changeLanguage('fr');
+  });
+
+  document.getElementById('lang-en').addEventListener('click', () => {
+    i18next.changeLanguage('en');
+  });
+
+  i18next.on('languageChanged', (lng) => {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.innerHTML = i18next.t(key);
+    });
+    document.documentElement.lang = lng;
+  });
+}
+
+loadTranslations();
+
 const links = document.querySelectorAll('nav li')
 
 icons.addEventListener("click", ()=>{
